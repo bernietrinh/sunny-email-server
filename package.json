@@ -4,10 +4,8 @@
   "description": "Universal React web page for Sunny Heating &amp; Cooling",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "server": "nodemon server/index.js",
-    "build": "next build",
-    "start": "next start"
+    "dev": "NODE_ENV=development nodemon index.js",
+    "start": "NODE_ENV=production node index.js"
   },
   "dependencies": {
     "body-parser": "^1.16.1",

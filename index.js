@@ -7,9 +7,10 @@ const cookieParser = require('cookie-parser');
 const nodemailer = require('nodemailer');
 const cors = require('express-cors');
 
-const emailConfig = require('./config/mail');
+const emailConfig = require('./config/' + process.env.NODE_ENV);
 const transporter = nodemailer.createTransport(emailConfig);
 
+console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 // get all data/stuff of the body (POST) parameters
 app.use(bodyParser.json()); // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
@@ -17,9 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-f
 app.use(cookieParser());
 
 app.use(cors({
-  allowedOrigins: [
-    'http://localhost:3000'
-  ]
+  allowedOrigins: [emailConfig.cors]
 }));
 
 
@@ -52,9 +51,8 @@ app.post('/api/inquiry', function (req, res) {
 
 });
 
-app.listen(8080, function () {
-  console.log(`Example app listening on port 8080!`);
-
+app.listen(8080, () => {
+  console.log(`Sunny email server listening on port 8080!`);
 });
 
 
