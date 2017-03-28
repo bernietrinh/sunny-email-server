@@ -1,0 +1,35 @@
+{
+  "name": "sunny",
+  "version": "1.0.0",
+  "description": "Universal React web page for Sunny Heating &amp; Cooling",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "server": "nodemon server/index.js",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "cookie-parser": "^1.4.3",
+    "es6-promise": "^4.1.0",
+    "express": "^4.14.1",
+    "express-cors": "0.0.3",
+    "fs": "0.0.1-security",
+    "fs-notifier": "0.0.3",
+    "net": "^1.0.2",
+    "nodemailer": "^3.1.1",
+    "tls": "0.0.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernietrinh/sunny-heating-and-cooling.git"
+  },
+  "author": "Bernie Trinh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bernietrinh/sunny-heating-and-cooling/issues"
+  },
+  "homepage": "https://github.com/bernietrinh/sunny-heating-and-cooling#readme"
+}
